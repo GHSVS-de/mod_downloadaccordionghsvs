@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="{{type}}" client="{{client}}" method="upgrade">
+	<name>{{nameUpper}}</name>
+	<author>{{authorName}}</author>
+	<creationDate>{{creationDate}}</creationDate>
+	<copyright>{{copyright}}</copyright>
+	<license>{{licenseLong}}</license>
+	<authorUrl>{{authorUrl}}</authorUrl>
+	<version>{{version}}</version>
+	<description>{{nameUpper}}_XML_DESCRIPTION</description>
+
+	<updateservers><server type="extension" priority="1" name="{{nameUpper}}">{{xmlserver}}/{{name}}-update.xml</server></updateservers>
+
+	<infourl>{{infourl}}</infourl>
+	<files>
+		<filename module="mod_downloadaccordionghsvs">mod_downloadaccordionghsvs.php</filename>
+		<filename>installerScript.php</filename>
+		<filename>LICENSE.txt</filename>
+		<folder>language</folder>
+		<folder>myforms</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<media folder="media" destination="{{name}}">
+		<folder>css</folder>
+		<folder>less</folder>
+	</media>
+	{{namespace}}
+	<customContent />
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+			</fieldset><!--/basic-->
+
+			<fieldset name="cards_anlegen" addfieldpath="plugins/fields/mediajce/fields"
+			label="Cards"
+			description="">
+
+			<field name="cardsSpacer" type="note" class="alert alert-info"
+	label="Hinweis"
+	description="MOD_DOWNLOADACCORDIONGHSVS_CARDS_DESC"/>
+
+				<field name="fotos" type="subform" min="1" max="100" multiple="true"
+				formsource="modules/mod_downloadaccordionghsvs/myforms/subform.xml"
+				layout="joomla.form.field.subform.repeatable" groupByFieldset="false"
+				label="Cards anlegen"
+				description="" />
+			</fieldset>
+
+
+			<fieldset name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="1"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+					>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+  <fieldset name="accordion-config">
+		<field name="downloadFile" class="extended-width" type="mediajce"
+			default="" preview="false" mediatype="files"
+			label="Download-Datei"
+			description="" />
+		<field name="downloadPreview" class="extended-width" type="mediajce"
+			default="" preview="true"
+			label="Preview-Bild"
+			description="" />
+  </fieldset>
+</form>

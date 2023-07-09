@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+ <field name="name" class="extended-width" type="textarea" filter="safehtml"
+ 	label="Überschrift"
+	description=""
+	default="" />
+
+	<field name="foto" class="extended-width" type="mediajce" default=""
+		preview="true" readonly="false"
+ 	label="Bild"
+	description="" />
+
+	<field name="textHeadline" class="extended-width" type="textarea" filter="safehtml"
+		label="Text-Überschrift"
+		description=""
+		default="" />
+
+ <field name="text" class="extended-width" type="textarea" filter="safehtml"
+ 	label="Text"
+	description=""
+	default="" />
+
+ <field name="buttonText" class="extended-width" type="text" default="Download"
+ 	label="Button-Text"
+	description="" />
+
+ <field name="active" type="list" filter="integer"
+  default="1" label="Card aktivieren (anzeigen)">
+  <option value="0">JNO</option>
+  <option value="1">JYES</option>
+ </field>
+
+	<field name="downloads" type="subform" min="1" max="10" multiple="true"
+		required="true"
+		formsource="modules/mod_downloadaccordionghsvs/myforms/subformFiles.xml"
+		layout="joomla.form.field.subform.repeatable"
+		groupByFieldset="false"
+		label="Download-Dateien" />
+</form>
