@@ -85,7 +85,7 @@ const pathMedia = `./media`;
 	}
 
 	cleanOuts = [
-		//`./package`
+		`./package`
 	];
 	await helper.cleanOut(cleanOuts).then(
 		answer => console.log(
