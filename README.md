@@ -1,8 +1,8 @@
 # mod_downloadaccordionghsvs.
 
-Joomla site module. Display cards with head image, headline, text, download link.
+Joomla site module. Display accordion with head image, headline, text, download links (with image preview).
 
-- Don't expect too much. It is designed for one indiviual Joomla 3 site. Not for the world.
+- **Do not expect anything! It is designed for one indiviual Joomla 3 site with outdated BS3. Not for the world!!**
 
 # My personal build procedure (WSL 1, Debian, Win 10)
 
