@@ -26,7 +26,6 @@
 		<folder>less</folder>
 	</media>
 	{{namespace}}
-	<customContent />
 	<config>
 		<fields name="params">
 
@@ -34,7 +33,7 @@
 			</fieldset><!--/basic-->
 
 			<fieldset name="cards_anlegen" addfieldpath="plugins/fields/mediajce/fields"
-			label="Cards"
+			label="Accordion"
 			description="">
 
 			<field name="cardsSpacer" type="note" class="alert alert-info"
@@ -44,7 +43,7 @@
 				<field name="fotos" type="subform" min="1" max="100" multiple="true"
 				formsource="modules/mod_downloadaccordionghsvs/myforms/subform.xml"
 				layout="joomla.form.field.subform.repeatable" groupByFieldset="false"
-				label="Cards anlegen"
+				label="Accordion anlegen"
 				description="" />
 			</fieldset>
 
