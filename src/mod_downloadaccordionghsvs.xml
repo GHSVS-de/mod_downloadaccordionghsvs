@@ -40,6 +40,11 @@
 	label="Hinweis"
 	description="MOD_DOWNLOADACCORDIONGHSVS_CARDS_DESC"/>
 
+			<field name="accordionHeadline" type="text"
+				label="Accordion-Überschrift"
+				description=""/>
+
+
 				<field name="fotos" type="subform" min="1" max="100" multiple="true"
 				formsource="modules/mod_downloadaccordionghsvs/myforms/subform.xml"
 				layout="joomla.form.field.subform.repeatable" groupByFieldset="false"
