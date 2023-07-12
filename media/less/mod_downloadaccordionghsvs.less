@@ -1,11 +1,42 @@
 .mod_downloadaccordionghsvs
 {
+	.card-footer
+	{
+		@btn2-padding: 2rem 1rem;
+		@btn2-font-size: 1.5rem;
+		@import "btn2.less";
+	}
+	.border-img
+	{
+		// Musst mit border arbeiten!
+		border: 0 solid #2382c3;
+	}
+	.div4foto
+	{
+		max-width: 33%;
+		img
+		{
+			max-width: 100%;
+		}
+		&.float-end
+		{
+			margin-bottom: 1rem;
+			margin-left: 1rem;
+		}
+	}
+	// Aufpassen. Das ist zugleich ein container-fluid.
+	.contentZeugs
+	{
+		background-color: #ececec;
+		padding-top: 2.5rem;
+		padding-bottom: 2.5rem;
+	}
 	.row
 	{
 		display: flex;
 		flex-wrap: wrap;
-		margin-left: -5px;
-		margin-right: -5px;
+		//margin-left: -5px;
+		//margin-right: -5px;
 	}
 
 	&> *
@@ -70,7 +101,7 @@
 		--bs-card-cap-color: ;
 		--bs-card-height: ;
 		--bs-card-color: ;
-		--bs-card-bg: #fff;
+		--bs-card-bg: ;
 		--bs-card-img-overlay-padding: 1rem;
 		--bs-card-group-margin: 0.75rem;
 		position: relative;
@@ -174,50 +205,87 @@
 		}
 	}
 
-// Die !important wegen dem schrottigen Template-CSS.
-h1, .h1 {
-  font-size: calc(1.375rem + 1.5vw) !important;
-}
-@media (min-width: 1200px) {
-  h1, .h1 {
-    font-size: 2.5rem !important;
-  }
-}
+	// Die !important wegen dem schrottigen Template-CSS.
+	h1, .h1 {
+		font-size: calc(1.375rem + 1.5vw) !important;
+	}
+	@media (min-width: 1200px) {
+		h1, .h1 {
+			font-size: 2.5rem !important;
+		}
+	}
 
-h2, .h2 {
-  font-size: calc(1.325rem + 0.9vw) !important;
-}
-@media (min-width: 1200px) {
-  h2, .h2 {
-    font-size: 2rem !important;
-  }
-}
+	h2, .h2 {
+		font-size: calc(1.325rem + 0.9vw) !important;
+	}
+	@media (min-width: 1200px) {
+		h2, .h2 {
+			font-size: 2rem !important;
+		}
+	}
 
-h3, .h3 {
-  font-size: calc(1.3rem + 0.6vw) !important;
-}
-@media (min-width: 1200px) {
-  h3, .h3 {
-    font-size: 1.75rem !important;
-  }
-}
+	h3, .h3 {
+		font-size: calc(1.3rem + 0.6vw) !important;
+	}
+	@media (min-width: 1200px) {
+		h3, .h3 {
+			font-size: 1.75rem !important;
+		}
+	}
 
-h4, .h4 {
-  font-size: calc(1.275rem + 0.3vw);
-}
-@media (min-width: 1200px) {
-  h4, .h4 {
-    font-size: 1.5rem;
-  }
-}
+	h4, .h4 {
+		font-size: calc(1.275rem + 0.3vw);
+	}
+	@media (min-width: 1200px) {
+		h4, .h4 {
+			font-size: 1.5rem;
+		}
+	}
 
-h5, .h5 {
-  font-size: 1.25rem;
-}
+	h5, .h5 {
+		font-size: 1.25rem;
+	}
 
-h6, .h6 {
-  font-size: 1rem;
-}
+	h6, .h6 {
+		font-size: 1rem;
+	}
+
+	// -xs . ACHTUNG: Breakpoint von mir für dieses Modul nachgerüstet!!
+	@media (min-width: 576px)
+	{
+		.col-xs {
+			flex: 1 0 0%;
+		}
+		.row-cols-xs-auto > * {
+			flex: 0 0 auto;
+			width: auto;
+		}
+		.row-cols-xs-1 > * {
+			flex: 0 0 auto;
+			width: 100%;
+		}
+		.row-cols-xs-2 > * {
+			flex: 0 0 auto;
+			width: 50%;
+		}
+		.row-cols-xs-3 > * {
+			flex: 0 0 auto;
+			width: 33.3333333333%;
+		}
+		.row-cols-xs-4 > * {
+			flex: 0 0 auto;
+			width: 25%;
+		}
+		.row-cols-xs-5 > * {
+			flex: 0 0 auto;
+			width: 20%;
+		}
+		.row-cols-xs-6 > * {
+			flex: 0 0 auto;
+			width: 16.6666666667%;
+		}
+	}
+
 
 	// -sm
 	@media (min-width: 768px)
