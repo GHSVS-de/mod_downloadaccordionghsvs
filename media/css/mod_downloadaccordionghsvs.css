@@ -118,7 +118,7 @@
   --bs-card-border-color: var(--bs-border-color-translucent);
   --bs-card-border-radius: 0.375rem;
   --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(-0.625rem);
+  --bs-card-inner-border-radius: calc(0.375rem - 1px);
   --bs-card-cap-padding-y: 0.5rem;
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
@@ -165,10 +165,6 @@
 .mod_downloadaccordionghsvs .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
 }
-.mod_downloadaccordionghsvs .card-subtitle {
-  margin-top: calc(0);
-  margin-bottom: 0;
-}
 .mod_downloadaccordionghsvs .card-text:last-child {
   margin-bottom: 0;
 }
@@ -188,20 +184,6 @@
   background-color: var(--bs-card-cap-bg);
   border-top: var(--bs-card-border-width) solid var(--bs-card-border-color);
 }
-.mod_downloadaccordionghsvs .card-header-tabs {
-  margin-right: calc(0);
-  margin-bottom: calc(0);
-  margin-left: calc(0);
-  border-bottom: 0;
-}
-.mod_downloadaccordionghsvs .card-header-tabs .nav-link.active {
-  background-color: var(--bs-card-bg);
-  border-bottom-color: var(--bs-card-bg);
-}
-.mod_downloadaccordionghsvs .card-header-pills {
-  margin-right: calc(0);
-  margin-left: calc(0);
-}
 .mod_downloadaccordionghsvs .card-img-overlay {
   position: absolute;
   top: 0;
@@ -220,19 +202,9 @@
 .mod_downloadaccordionghsvs .card-img-bottom img {
   max-width: 100%;
 }
-.mod_downloadaccordionghsvs h1,
-.mod_downloadaccordionghsvs .h1 {
-  font-size: calc(2.875rem) !important;
-}
-@media (min-width: 1200px) {
-  .mod_downloadaccordionghsvs h1,
-  .mod_downloadaccordionghsvs .h1 {
-    font-size: 2.5rem !important;
-  }
-}
 .mod_downloadaccordionghsvs h2,
 .mod_downloadaccordionghsvs .h2 {
-  font-size: calc(2.225rem) !important;
+  font-size: calc(1.325rem + 0.9vw) !important;
 }
 @media (min-width: 1200px) {
   .mod_downloadaccordionghsvs h2,
@@ -242,7 +214,7 @@
 }
 .mod_downloadaccordionghsvs h3,
 .mod_downloadaccordionghsvs .h3 {
-  font-size: calc(1.9rem) !important;
+  font-size: calc(1.3rem + 0.6vw) !important;
 }
 @media (min-width: 1200px) {
   .mod_downloadaccordionghsvs h3,
@@ -252,7 +224,7 @@
 }
 .mod_downloadaccordionghsvs h4,
 .mod_downloadaccordionghsvs .h4 {
-  font-size: calc(1.575rem);
+  font-size: calc(1.275rem + 0.3vw);
 }
 @media (min-width: 1200px) {
   .mod_downloadaccordionghsvs h4,

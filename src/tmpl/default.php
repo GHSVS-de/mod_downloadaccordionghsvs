@@ -19,7 +19,7 @@ $modId = 'mod_downloadaccordionghsvs-' . $module->id;
 <?php // Klasse eorRemoveP nicht verschieben.! Siehe KubikRubik EOR-Plugin. ?>
 <div class="eorRemoveP mod_downloadaccordionghsvs <?php echo $modId; ?>">
 
-	<p class="h1 text-uppercase mb-5">
+	<p class="karriere_head h1">
 		<?php echo $accordionHeadline; ?>
 	</p>
 
