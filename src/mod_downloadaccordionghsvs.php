@@ -83,7 +83,7 @@ if (is_object($cards) && count(get_object_vars($cards)))
 
 		$card->text = HTMLHelper::_('content.prepare', $card->text);
 
-		$downloadChecker = ['downloadFile', 'downloadPreview'];
+		$downloadChecker = ['downloadFile', 'downloadPreview', 'downloadLink'];
 
 		if (
 			!empty($card->downloads) && is_object($card->downloads)
@@ -113,15 +113,19 @@ if (is_object($cards) && count(get_object_vars($cards)))
 				unset($card->downloads[$key2]);
 				continue;
 			}
+
 			foreach ($downloadChecker as $what)
 			{
-
 				$tmp = explode('/', $card->downloads[$key2]->$what);
 				$whatKey = $what . 'Name';
 				$card->downloads[$key2]->$whatKey = array_pop($tmp);
 			}
+
+			$card->downloads[$key2]->downloadTarget = empty($card->downloads[$key2]->downloadTarget) ? '' : ' target=_blank rel="noopener noreferrer"';
 		}
 
+
+#echo ' 4654sd48sa7d98sD81s8d71dsa <pre>' . print_r($card->downloads, true) . '</pre>';exit;
 		$card->hasDownloads = count($card->downloads);
 
 		$togglers[] = $card;

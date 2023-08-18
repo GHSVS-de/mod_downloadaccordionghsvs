@@ -1,6 +1,8 @@
 <?php
 defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Uri\Uri;
+use Joomla\Utilities\ArrayHelper;
 
 if (empty($togglers))
 {
@@ -19,7 +21,7 @@ $modId = 'mod_downloadaccordionghsvs-' . $module->id;
 <?php // Klasse eorRemoveP nicht verschieben.! Siehe KubikRubik EOR-Plugin. ?>
 <div class="eorRemoveP mod_downloadaccordionghsvs <?php echo $modId; ?>">
 
-	<p class="karriere_head h1">
+	<p class="karriere_head">
 		<?php echo $accordionHeadline; ?>
 	</p>
 
@@ -55,18 +57,39 @@ $modId = 'mod_downloadaccordionghsvs-' . $module->id;
 
 						<div class="fw-bold mb-2"><?php echo $toggler->textHeadline; ?></div>
 						<div class="float-end div4foto"><img src="<?php echo $toggler->foto; ?>" alt=""></div>
-						<div class="mb-2_5rem"><?php echo $toggler->text; ?></div>
+						<div class="mb-4"><?php echo $toggler->text; ?></div>
 
 						<?php
 						if ($toggler->hasDownloads > 0)
-						{ ?>
-							<div class="row row-cols-1 row-cols-xs-2 row-cols-sm-3 row-cols-md-2 row-cols-lg-2 justify-content-centerssssssssssss clearfix">
+						{
+							$cardBodyClass = ' p-0';
+
+							foreach ($toggler->downloads as $download)
+							{
+								if (!empty($download->downloadPreview))
+								{
+									$cardBodyClass = '';
+									break;
+								}
+							}
+						?>
+							<div class="row row-cols-2 row-cols-xs-3 row-cols-sm-3 row-cols-md-3 row-cols-lg-3 justify-content-centerssssssssssss clearfix">
 								<?php
 								foreach ($toggler->downloads as $download)
-								{ ?>
+								{
+									$btnClass = 'fa fa-download';
+									$link = $download->downloadFile;
+									$target = $download->downloadTarget;
+
+									if ($download->downloadLink)
+									{
+										$btnClass = 'fa fa-link';
+										$link = $download->downloadLink;
+									}
+								?>
 									<div class="col">
 										<div class="card h-100">
-											<div class="card-body">
+											<div class="card-body<?php echo $cardBodyClass; ?>">
 												<?php
 												if ($download->downloadPreview)
 												{ ?>
@@ -75,7 +98,8 @@ $modId = 'mod_downloadaccordionghsvs-' . $module->id;
 													class=" border-img border-1">
 												</div>
 												<?php
-												} else { ?>
+												} else if ($download->downloadFileName)
+												{ ?>
 												<div class="card-img">
 													<b><?php echo $download->downloadFileName; ?></b>
 												</div>
@@ -84,9 +108,9 @@ $modId = 'mod_downloadaccordionghsvs-' . $module->id;
 											</div><!--/.card-body-->
 
 											<div class="card-footer">
-												<a class="btn2 btn-default2 h-100 w-100" href="<?php echo $download->downloadFile; ?>">
-													<span class="fa fa-download"> </span>
-													<?php echo $toggler->buttonText; ?>
+												<a class="btn2 btn-default2 h-100 w-100" href="<?php echo $link; ?>"<?php echo $target; ?>>
+													<span class="<?php echo $btnClass; ?>"> </span>
+													&nbsp;<?php echo $toggler->buttonText; ?>
 												</a>
 											</div><!--/.card-footer-->
 										</div><!--/.card-->

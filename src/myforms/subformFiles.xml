@@ -5,6 +5,17 @@
 			default="" preview="false" mediatype="files"
 			label="Download-Datei"
 			description="" />
+		<field name="downloadLink" class="extended-width" type="text" default=""
+			filter="trim"
+			label="oder Link"
+			description="" />
+		<field name="downloadTarget" class="extended-width" type="list" default="0"
+			filter="integer"
+			label="In neuem Tabulator öffnen?"
+			description="">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
 		<field name="downloadPreview" class="extended-width" type="mediajce"
 			default="" preview="true"
 			label="Preview-Bild"
